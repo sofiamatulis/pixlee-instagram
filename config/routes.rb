@@ -3,9 +3,4 @@ Rails.application.routes.draw do
 
   root 'photos#index'
 
-  get '/callback', to: 'photos#callback'
-
-
-
-
 end

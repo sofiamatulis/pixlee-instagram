@@ -1,9 +1,10 @@
 class PhotosController < ApplicationController
 
-  def callback
-    response = Instagram.get_access_token(params[:code], redirect_uri: ENV['REDIRECT_URI'])
-    session[:access_token] = response.access_token
-    redirect_to root_path
+#
+  def index
+    client = Instagram.client(:access_token => ENV["ACCESS_TOKEN"])
+   @pictures = client.get('/v1/tags/icecream/media/recent')
+  # render json: pictures
   end
 
 end

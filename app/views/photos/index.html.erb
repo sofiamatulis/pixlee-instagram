@@ -1,10 +1,13 @@
-
-<!-- media items for the username -->
-<!-- <h1><%#= @user.username.capitalize %> feed</h1>
-  <%# @recent_media_items.each do |media| %>
-  <img src="<%#= media.images.thumbnail.url%>">
-<%# end%> -->
-
+<!--  render the photos-->
 <% @pictures.each do | picture | %>
   <img src="<%= picture.images.thumbnail.url%>">
+<% end %>
+
+<!-- search bar -->
+
+<%= form_tag '/', method: :get do %>
+  <%= label_tag( "Search:") %>
+  <!--  saving the tag_name in here-->
+  <%= text_field_tag :tag_name %>
+  <%= submit_tag "Search" %>
 <% end %>

@@ -11,13 +11,19 @@
   <body>
     <span class = "userinfo">
         <% if current_user %>
-          <span id = "welcome-message"> Signed in as <%= link_to "#{current_user.name}", user_path(current_user) %></span> |
+          <span id = "welcome-message"> Signed in as <%= link_to "#{current_user.name}", root_path %></span> |
           <span id = "log-out-button"><%= link_to "Log out", session_path("current"), :method => :delete %></span>
+          <div class = "profile-title">Your Galleries</div>
+            <div class="button" id="new-gallerie">
+            <%= link_to "Create a new gallerie", new_gallery_path %>
+          </div>
         <% else %>
           <span id = "log-in-button"><%= link_to "Log In", new_session_path %></span> |
           <span id = "sign-up-button"><%= link_to "Sign Up", new_user_path %></span>
         <% end %>
     </span>
+
+
 
     <%= yield %>
   </body>

@@ -1,0 +1,7 @@
+<div class="list-container">
+  <% @galleries.each do |gallery| %>
+  <ul class="list-items">
+    <li id="name"><h2><%= link_to gallery.name, gallery_path(gallery) %></h2></li>
+  </ul>
+  <% end %>
+</div>

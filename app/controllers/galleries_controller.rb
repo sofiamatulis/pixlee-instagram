@@ -1,17 +1,34 @@
 class GalleriesController < ApplicationController
   def new
-    @gallerie = Gallerie.new(:user_id => params[:user])
+    @gallery = Gallery.new
   end
 
   def create
-    @gallerie = Gallerie.new(gallerie_params)
-    @gallerie.user_id = current_user.id
-     @gallerie.save
-
-    respond_to do |format|
-    format.html {render html: @gallerie}
-    format.json {render json: @gallerie.to_json}
-    end
-
+  @gallery = Gallery.new(gallery_params)
+  if @gallery.save
+    redirect_to gallery_url
+  else
+    render :new
   end
+end
+
+def index
+   @galleries = Gallery.all
+end
+
+def show
+  @gallery = Gallery.find(params[:id])
+end
+
+
+
+
+private
+def gallery_params
+  params.require(:gallery).permit(:name)
+end
+
+
+
+
 end

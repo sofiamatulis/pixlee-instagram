@@ -13,6 +13,7 @@ class PhotosController < ApplicationController
    @pictures = client.get("tags/#{@tag_name}/media/recent")
  # render json: pull_time
  # render json: @pictures
+  pull_time
 
   end
 

@@ -2,12 +2,10 @@
 
 one:
   name: MyString
-  client_id: MyString
-  client_secret: MyString
-  client_token: MyString
+  email: MyString
+  password_digest: MyString
 
 two:
   name: MyString
-  client_id: MyString
-  client_secret: MyString
-  client_token: MyString
+  email: MyString
+  password_digest: MyString

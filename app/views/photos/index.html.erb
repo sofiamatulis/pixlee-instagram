@@ -4,10 +4,17 @@
 <% end %>
 
 <!-- search bar -->
-
 <%= form_tag '/', method: :get do %>
   <%= label_tag( "Search:") %>
   <!--  saving the tag_name in here-->
   <%= text_field_tag :tag_name %>
-  <%= submit_tag "Search" %>
+
+  <%#= label :start_date %><br>
+  <%= date_field_tag :start_date %> <br>
+
+  <%#= label :end_date %><br>
+  <%= date_field_tag :end_date %>
+
+<%= submit_tag "Search" %>
+
 <% end %>

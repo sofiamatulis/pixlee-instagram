@@ -18,6 +18,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'instagram'
 gem "figaro"
 gem 'pry'
+gem 'react-rails', '~> 1.0'
+
 
 
 # Use jquery as the JavaScript library

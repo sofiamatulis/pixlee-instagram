@@ -1,5 +1,4 @@
 class PhotosController < ApplicationController
-
   helper_method :pull_time
 
   def index

@@ -2,7 +2,6 @@
 <% @pictures.each do | picture | %>
   <img src="<%= picture.images.thumbnail.url%>">
 <% end %>
-
 <!-- search bar -->
 <%= form_tag '/', method: :get do %>
   <%= label_tag( "Search:") %>
@@ -11,4 +10,8 @@
   <%= date_field_tag :start_date %> <br>
   <%= date_field_tag :end_date %>
 <%= submit_tag "Search" %>
+<% end %>
+
+<% if current_user %>
+<%= select('name','selected_name', @gallery) %>
 <% end %>

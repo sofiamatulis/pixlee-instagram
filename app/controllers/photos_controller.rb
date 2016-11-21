@@ -14,6 +14,10 @@ class PhotosController < ApplicationController
  # render json: @pictures
   pull_time
 
+    if current_user
+      @gallery = Gallery.where(user_id: current_user.id).pluck(:name)
+    end
+    
   end
 
   private

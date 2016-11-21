@@ -15,11 +15,11 @@ class GalleriesController < ApplicationController
 end
 
 def index
-   @galleries = Gallery.all
+   @galleries = Gallery.where(user_id: current_user.id)
 end
 
 def show
-  @gallery = Gallery.find(params[:id])
+  @gallery = Photo.where(gallery_id: params[:id])
 end
 
 

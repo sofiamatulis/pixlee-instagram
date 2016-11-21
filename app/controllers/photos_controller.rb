@@ -17,8 +17,19 @@ class PhotosController < ApplicationController
     if current_user
       @gallery = Gallery.where(user_id: current_user.id).pluck(:name)
     end
-    
+
   end
+
+  def add
+    gallery = Gallery.find_by(name: params[:gallery_name])
+    puts gallery
+    @photos = Photo.new(thumbnail_url: params[:picture_url], gallery_id: gallery.id)
+    if @photos.save
+      redirect_to root_url
+    end
+
+  end
+
 
   private
   def pull_time

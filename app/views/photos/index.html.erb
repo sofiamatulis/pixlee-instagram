@@ -1,6 +1,8 @@
 <!--  render the photos-->
 <% @pictures.each do | picture | %>
-  <img src="<%= picture.images.thumbnail.url%>">
+  <!-- <img src="<%#= picture.images.thumbnail.url%>"> -->
+  <%=link_to(image_tag("#{picture.images.thumbnail.url}", :class => 'image',  data: {id: "#{picture.id}", url: "#{picture.images.thumbnail.url}"})) %>
+
 <% end %>
 <!-- search bar -->
 <%= form_tag '/', method: :get do %>

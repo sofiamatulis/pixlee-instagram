@@ -10,5 +10,7 @@ Rails.application.routes.draw do
     resources :galleries
   end
 
+  post "/add_picture", to: "photos#add"
+
 
 end

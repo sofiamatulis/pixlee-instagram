@@ -1,5 +1,8 @@
-<div class="show-image">
-  <h1><% @gallery.each do |gal|%></h1>
-  <%= image_tag("#{gal.thumbnail_url}") %>
-  <% end %>
-</div>
+<!-- <div class="show-image">
+  <h1><%# @gallery.each do |gal|%></h1>
+  <%#= image_tag("#{gal.thumbnail_url}") %>
+  <%# end %>
+</div> -->
+
+
+<%= react_component 'Gallery', {gallery: @gallery} %>

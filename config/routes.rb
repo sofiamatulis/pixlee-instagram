@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     resources :galleries
   end
 
+  # when posting to this link, check controller photos for the add function
+
   post "/add_picture", to: "photos#add"
 
 

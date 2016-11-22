@@ -7,11 +7,14 @@ class PhotosController < ApplicationController
 # if there is no tag, use icecream tag!
   @tag_name =  params[:tag_name] ||= 'icecream'
   @start_date = params[:start_date]
-  @end_date = params[:end_date] 
+  @end_date = params[:end_date]
 # this is the end point to look for these photos
    @response = client.get("tags/#{@tag_name}/media/recent")
  # render json: pull_time
- # render json: @pictures
+ # render json: @response
+
+ # if there is input for all three of them, then use the pull time function
+ # otherwise just pull the recent photos with a tag (or no tag)
  if @start_date && @end_date && @tag_name
    @pictures = pull_time
  else
@@ -21,9 +24,9 @@ class PhotosController < ApplicationController
     if current_user
       @gallery = Gallery.where(user_id: current_user.id).pluck(:name)
     end
-
   end
 
+# adding the gallery's info such as thumbnail url, to this gallery id
   def add
     gallery = Gallery.find_by(name: params[:gallery_name])
     puts gallery
@@ -36,6 +39,8 @@ class PhotosController < ApplicationController
 
 
   private
+
+  # make sure I am pulling the time that the user is choosing
   def pull_time
     pulled_photos = @response.each do |picture|
       if @start_date >= picture.created_time && @end_date <= picture.created_time
@@ -44,14 +49,6 @@ class PhotosController < ApplicationController
       end
     end
     return pulled_photos
-  end
-
-  def comment_tag
-    @pictures.each do |picture|
-      if picture.comment_tag includes?(tag)
-        return picture
-      end
-    end
   end
 
 end

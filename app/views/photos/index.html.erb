@@ -4,11 +4,11 @@
 <% end %>
 <!-- search bar -->
 <%= form_tag '/', method: :get do %>
-  <%= label_tag( "Search:") %>
+  <%= label_tag( "Search:") %><br><br>
   <!--  saving the tag_name in here-->
-  <%= text_field_tag :tag_name %><br>
-  <%= date_field_tag :start_date %> <br>
-  <%= date_field_tag :end_date %>
+  <%= text_field_tag :tag_name %><br><br>
+  <%= date_field_tag :start_date %> <br><br>
+  <%= date_field_tag :end_date %><br><br>
 <%= submit_tag "Search" %>
 <% end %>
 <p> Select a gallery in this drop down menu, then click on the picture you would like to add </p>

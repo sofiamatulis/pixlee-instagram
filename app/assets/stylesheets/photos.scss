@@ -1,3 +1,21 @@
-// Place all the styles related to the photos controller here.
+// Place all the styles related to the photos controller her
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+form {
+  text-align: center;
+}
+
+
+#new-gallerie, #my-galleries {
+  position: relative;
+  left:60%;
+}
+
+
+ul {
+    list-style-type: none;
+}
+
+#name {
+  text-align:center;
+}

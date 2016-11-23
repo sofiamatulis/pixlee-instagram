@@ -1,8 +1,6 @@
 $(function() {
 
-  var currentUser = Parse.User.current();
 
-    if (currentUser) {
 
   // making sure the DOM is ready
     console.log( "ready!" );
@@ -28,14 +26,14 @@ $(function() {
         method: "POST",
         dataType: JSON
 
-
       });
       alert("Your picture has been added");
 
 
     });
 
-  }
+
+
 
 
 

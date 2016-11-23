@@ -10,7 +10,8 @@ class PhotosController < ApplicationController
     @end_date = params[:end_date]
   # this is the end point to look for these photos
      @response = client.get("tags/#{@tag_name}/media/recent")
-   # if there is input for all three of them, then use the pull time function
+
+   # if there is input for all three of them (start date, end date and tag name), then use the pull time function
    # otherwise just pull the recent photos with a tag (or no tag)
      if @start_date && @end_date && @tag_name
        @pictures = pull_time
@@ -37,7 +38,7 @@ class PhotosController < ApplicationController
 
   private
 
-  # make sure I am pulling the time that the user is choosing
+  # make sure I am pulling the time that the user is choosing in the form
   def pull_time
     pulled_photos = @response.each do |picture|
       if @start_date >= picture.created_time && @end_date <= picture.created_time

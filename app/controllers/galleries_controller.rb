@@ -14,19 +14,20 @@ class GalleriesController < ApplicationController
   end
 end
 
-def index
-   @galleries = Gallery.where(user_id: current_user.id)
+  def index
+     @galleries = Gallery.where(user_id: current_user.id)
+  end
+
+  def show
+    @gallery = Photo.where(gallery_id: params[:id])
+  end
+
+
+  private
+  def gallery_params
+    params.require(:gallery).permit(:name)
+  end
+
 end
 
-def show
-  @gallery = Photo.where(gallery_id: params[:id])
-end
-
-
-private
-def gallery_params
-  params.require(:gallery).permit(:name)
-end
-
-
-end
+#  creating new galleries only when the user is logged in

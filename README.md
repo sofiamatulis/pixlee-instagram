@@ -24,9 +24,9 @@ https://stark-dawn-58719.herokuapp.com
 
   <br>
 
-  * What was done for Back-end: In terms of back-end, I created a rails app(MVC model). When it comes to models, I created a User model (the user can make an account), a Gallery model(a user can create an account), and a photo model (information from the photos pulled from Instagram's API). In terms of views, views for log in/sign up, create a gallery, view a gallery/all galleries, view all photos, search photos, add photos to the gallery, were made to make the user experience very friendly. Finally, in terms of the controller, in the photos controller, there are the functions to add photos to your gallery and the index of all the photos, in the users controller there is the option to create a new account, in the sessions controller, there is the option to log in and log out and in the galleries controller, it is possible to make new galleries and view them.
+  * What was done for Back-end: In terms of back-end, I created a rails app(MVC model). When it comes to models, I created a User model (the user can make an account), a Gallery model(a user can create an account), and a photo model (information from the photos pulled from Instagram's API). Finally, in terms of the controller, in the photos controller, there are the functions to add photos to your gallery and the index of all the photos, in the users controller there is the option to create a new account, in the sessions controller, there is the option to log in and log out and in the galleries controller, it is possible to make new galleries and view them.
 
-  * What was done for Front-end: In terms of front-end, I used React to showcase the gallery's show page, javascript to be able to save a photo in a gallery with an AJAX request and a drop down menu to make it more user friendly. CSS was used to make the page look nicer and only some views are rendered if the user is logged in, if he is logged out only the search function is available. 
+  * What was done for Front-end: In terms of front-end, I used React to showcase the gallery's show page, javascript to be able to save a photo in a gallery with an AJAX request and a drop down menu to make it more user friendly. CSS was used to make the page look nicer and only some views are rendered if the user is logged in, if he is logged out only the search function is available. In terms of views, views for log in/sign up, create a gallery, view a gallery/all galleries, view all photos, search photos, add photos to the gallery, were made to make the user experience very friendly.
 
    <br>Features that were added:
 
@@ -40,7 +40,10 @@ https://stark-dawn-58719.herokuapp.com
 
 
    <br>What I would improve: <br>
-   With more time I would have made a more in depth search function and a better interface for the user.
+
+  * More in depth search function
+  * A better interface for the user
+  
 
 
    Documentation:

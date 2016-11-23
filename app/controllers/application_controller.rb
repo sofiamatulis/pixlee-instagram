@@ -8,3 +8,6 @@ class ApplicationController < ActionController::Base
   end
 
 end
+
+
+#  defining if the user is logged in or not

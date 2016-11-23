@@ -6,7 +6,7 @@
 <%= form_tag '/', method: :get do %>
   <%= label_tag( "Search:") %><br><br>
   <!--  saving the tag_name in here-->
-  <%= text_field_tag :tag_name %><br><br>
+  <%= text_field_tag :tag_name, nil, :required => true%><br><br>
   <%= date_field_tag :start_date %> <br><br>
   <%= date_field_tag :end_date %><br><br>
 <%= submit_tag "Search" %>

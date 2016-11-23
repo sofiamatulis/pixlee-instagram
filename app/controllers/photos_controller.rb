@@ -21,6 +21,7 @@ class PhotosController < ApplicationController
    @pictures = @response
  end
 
+
     if current_user
       @gallery = Gallery.where(user_id: current_user.id).pluck(:name)
     end

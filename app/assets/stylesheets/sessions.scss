@@ -33,7 +33,27 @@ a:link {
 
 }
 
-/* visited link */
 a:visited {
   text-decoration: none;
+}
+
+.header-log-in {
+  font-family: 'Open Sans', sans-serif;
+  display:inline;
+  position:relative;
+  left:48%;
+  font-weight: 100;
+  top:90px;
+
+
+}
+
+.header-sign-up {
+  font-family: 'Open Sans', sans-serif;
+  display:inline;
+  position:relative;
+  left:45%;
+  font-weight: 100;
+  top:90px;
+
 }

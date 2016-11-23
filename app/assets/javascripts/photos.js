@@ -1,7 +1,8 @@
 $(function() {
 
   var currentUser = Parse.User.current();
-if (currentUser) {
+
+    if (currentUser) {
 
   // making sure the DOM is ready
     console.log( "ready!" );

@@ -11,7 +11,7 @@
   <%= date_field_tag :end_date %><br><br>
 <%= submit_tag "Search" %>
 <% end %>
-<p> Select a gallery in this drop down menu, then click on the picture you would like to add </p>
 <% if current_user %>
+<p> Select a gallery in this drop down menu, then click on the picture you would like to add </p>
 <%= select('name','selected_name', @gallery) %>
 <% end %>

@@ -1,6 +1,6 @@
-Pixlee- Instagram
+##Pixlee- Instagram
 
-## This is a  simple web app to showcase Instagram's pictures. The user can search through photos by tag and date.The user can also make an account and create a gallery where the photos can be saved.
+ This is a  simple web app to showcase Instagram's pictures. The user can search through photos by tag and date.The user can also make an account and create a gallery where the photos can be saved.
 
  Gems that were used:
 

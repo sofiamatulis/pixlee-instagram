@@ -2,29 +2,25 @@ class PhotosController < ApplicationController
   helper_method :pull_time
 
   def index
-    # saving the token in the client
-  client = Instagram.client(:access_token => ENV["ACCESS_TOKEN"])
-# if there is no tag, use icecream tag!
-  @tag_name =  params[:tag_name] ||= 'icecream'
-  @start_date = params[:start_date]
-  @end_date = params[:end_date]
-# this is the end point to look for these photos
-   @response = client.get("tags/#{@tag_name}/media/recent")
- # render json: pull_time
- # render json: @response
-
- # if there is input for all three of them, then use the pull time function
- # otherwise just pull the recent photos with a tag (or no tag)
- if @start_date && @end_date && @tag_name
-   @pictures = pull_time
- else
-   @pictures = @response
- end
-
-
-    if current_user
-      @gallery = Gallery.where(user_id: current_user.id).pluck(:name)
-    end
+      # saving the token in the client
+    client = Instagram.client(:access_token => ENV["ACCESS_TOKEN"])
+  # if there is no tag, use icecream tag!
+    @tag_name =  params[:tag_name] ||= 'icecream'
+    @start_date = params[:start_date]
+    @end_date = params[:end_date]
+  # this is the end point to look for these photos
+     @response = client.get("tags/#{@tag_name}/media/recent")
+   # if there is input for all three of them, then use the pull time function
+   # otherwise just pull the recent photos with a tag (or no tag)
+     if @start_date && @end_date && @tag_name
+       @pictures = pull_time
+     else
+       @pictures = @response
+     end
+    #   grabbing the name of the gallery if the user is logged in.
+      if current_user
+        @gallery = Gallery.where(user_id: current_user.id).pluck(:name)
+      end
   end
 
 # adding the gallery's info such as thumbnail url, to this gallery id

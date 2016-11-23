@@ -1,4 +1,8 @@
 $(function() {
+
+  var currentUser = Parse.User.current();
+if (currentUser) {
+
   // making sure the DOM is ready
     console.log( "ready!" );
     $("#name_selected_name").on('click', function(event){
@@ -29,6 +33,8 @@ $(function() {
 
 
     });
+
+  }
 
 
 

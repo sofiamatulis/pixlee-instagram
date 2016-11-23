@@ -30,7 +30,7 @@ https://stark-dawn-58719.herokuapp.com
 
    <br>Features that were added:
 
-  * Search through Instagram's photos by hashtag and date (the default is Ice cream)
+  * Search through Instagram's photos by hashtag and date
 
   * A user is able to create an account and login
 

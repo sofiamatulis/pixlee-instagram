@@ -14,13 +14,13 @@
         <% if current_user %>
           <span id = "welcome-message"> Signed in as <%= link_to "#{current_user.name}", root_path %></span> |
           <span id = "log-out-button"><%= link_to "Log out", session_path("current"), :method => :delete %></span>
-          <%= link_to "My galleries", galleries_path, :id => 'my-galleries' %>
+          <%= link_to "My galleries", galleries_path, :id => 'my-galleries' %> 
             <div class="button" id="new-gallerie">
             <%= link_to "Create a new gallerie", new_gallery_path %><br><br>
           </div>
         <% else %>
         <!-- if the user is not logged in -->
-        <span id = "home">  <%= link_to "Home", root_path %></span> |
+          <span id = "home">  <%= link_to "Home", root_path %></span> |
           <span id = "log-in-button"><%= link_to "Log In", new_session_path %></span> |
           <span id = "sign-up-button"><%= link_to "Sign Up", new_user_path %></span> <br><br>
         <% end %>

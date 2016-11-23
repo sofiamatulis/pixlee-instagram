@@ -13,6 +13,6 @@
 <% end %>
 <!--  if the user is logged in, drop down menu will show up-->
 <% if current_user %>
-  <p> Select a gallery in this drop down menu, then click on the picture you would like to add </p>
+  <p id="drop-down-menu"> Select a gallery in this drop down menu, then click on the picture you would like to add </p> <br><br>
   <%= select('name','selected_name', @gallery) %>
 <% end %>
